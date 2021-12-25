@@ -1,3 +1,22 @@
-example_id                | status | run_time        |
-------------------------- | ------ | --------------- |
-./spec/hello_spec.rb[1:1] | passed | 0.00087 seconds |
+example_id                            | status | run_time        |
+------------------------------------- | ------ | --------------- |
+./spec/hello_spec.rb[1:1]             | passed | 0.00087 seconds |
+./spec/task_recorder_spec.rb[1:1]     | passed | 0.00084 seconds |
+./spec/task_recorder_spec.rb[2:1:1]   | passed | 0.00437 seconds |
+./spec/task_recorder_spec.rb[2:2:1]   | passed | 0.00023 seconds |
+./spec/task_recorder_spec.rb[2:3:1]   | passed | 0.00538 seconds |
+./spec/task_recorder_spec.rb[2:4:1]   | passed | 0.00023 seconds |
+./spec/task_recorder_spec.rb[3:1:1]   | passed | 0.00102 seconds |
+./spec/task_recorder_spec.rb[3:2:1]   | passed | 0.00167 seconds |
+./spec/task_recorder_spec.rb[4:1:1]   | passed | 0.00092 seconds |
+./spec/task_recorder_spec.rb[5:1:1]   | passed | 0.00221 seconds |
+./spec/task_recorder_spec.rb[5:1:2:1] | passed | 0.00019 seconds |
+./spec/task_recorder_spec.rb[5:1:2:2] | passed | 0.0003 seconds  |
+./spec/task_recorder_spec.rb[5:1:2:3] | passed | 0.00024 seconds |
+./spec/task_recorder_spec.rb[6:1:1]   | passed | 0.00172 seconds |
+./spec/task_recorder_spec.rb[6:2:1]   | passed | 0.00073 seconds |
+./spec/task_recorder_spec.rb[7:1:1]   | passed | 0.00025 seconds |
+./spec/task_recorder_spec.rb[7:2:1]   | passed | 0.00086 seconds |
+./spec/task_recorder_spec.rb[7:2:2]   | passed | 0.00188 seconds |
+./spec/task_recorder_spec.rb[7:2:3]   | passed | 0.00086 seconds |
+./spec/task_recorder_spec.rb[8:1:1]   | passed | 0.00543 seconds |

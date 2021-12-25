@@ -1,47 +1,106 @@
 require 'logger'
 
+class Recorder
+  def initialize
+    @start_time
+    @end_time
+    @date
+    @number
+    @comment
+    @kinds
+    @result_time
+  end
+  def start_time
+    @start_time
+  end
+  def start_time=(value)
+    @start_time = value
+  end
+  def end_time
+    @end_time
+  end
+  def end_time=(value)
+    @end_time = value
+  end
+  def start_time_count
+    @start_time = Time.new
+  end
+  def end_time_count
+    @end_time = Time.new
+  end
+  def date
+    @date
+  end
+  def date_count
+    time = Time.new
+    @date = time.strftime("%Y/%m/%d")  
+  end
+  def number
+    @number
+  end
+  def number=(value)
+    @number = value
+  end
+  def comment
+    @comment  
+  end
+  def comment=(value)
+    @comment = value
+  end
+  def kinds
+    @kinds
+  end
+  def kinds_case
+    @kinds =
+    case @number.to_i
+    when 1
+      "リーディングリストのブックマーク処理"  
+    when 2
+      "プログラミング学習"
+    when 3
+      "仕事"
+    end    
+  end
+  def result_time
+    @result_time = ((@end_time - @start_time)/60).round
+  end  
+end
+
 
 logger = Logger.new('./log/logfile.log')
 logger.datetime_format = ''
 
-start_time = Time.new
-date = start_time.strftime("%Y/%m/%d")
+record = Recorder.new
+record.date_count
+record.start_time_count
 
-text = <<TEXT
+msg1 = <<TEXT
 種類を選択して下さい
 1: リーディングリストのブックマーク処理
 2: プログラミング学習
 3: 仕事
 TEXT
 
-puts text
-number = gets
+puts msg1
+record.number = gets
 
-puts "内容を入力して下さい"
-comment = gets
+msg2 = '内容を入力して下さい' 
+puts msg2
 
-end_time = Time.new
+record.comment = gets
 
-kinds=
-case number.to_i
-when 1
-  "リーディングリストのブックマーク処理"  
-when 2
-  "プログラミング学習"
-when 3
-  "仕事"
-end
+record.end_time_count
 
-result_time = ((end_time - start_time)/60).round
+record.kinds_case
 
-result_text = <<TEXT
+msg3 = <<TEXT
 ------------------------------------
-日付: #{date}
-種類: #{kinds}
-内容: #{comment.chomp}
-時間: #{result_time}
+日付: #{record.date}
+種類: #{record.kinds}
+内容: #{record.comment.chomp}
+時間: #{record.result_time}
 TEXT
 
-puts result_text
+puts msg3
 
-logger.info("#{date}, #{kinds}, #{comment.chomp}, #{result_time}")
+logger.info("#{record.date}, #{record.kinds}, #{record.comment.chomp}, #{record.result_time}")
