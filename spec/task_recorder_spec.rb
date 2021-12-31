@@ -42,14 +42,20 @@ RSpec.describe Recorder do
   end
 
   describe '#number=' do
-    it '種類の番号を "1" に変更できるか' do
-      expect(@record.number = 1).to eq 1
+    context '種類の番号が１の場合' do
+      it '１に変更できるか' do
+        expect(@record.number = 1).to eq 1
+      end      
     end
-    it '種類の番号を "2" に変更できるか' do
-      expect(@record.number = 2).to eq 2
+    context '種類の番号が２の場合' do
+      it '２に変更できるか' do
+        expect(@record.number = 2).to eq 2
+      end      
     end
-    it '種類の番号を "3" に変更できるか' do
-      expect(@record.number = 3).to eq 3
+    context '種類の番号が３の場合' do
+      it '３に変更できるか' do
+        expect(@record.number = 3).to eq 3
+      end      
     end
   end
 
