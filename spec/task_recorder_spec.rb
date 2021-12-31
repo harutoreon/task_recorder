@@ -78,17 +78,23 @@ RSpec.describe Recorder do
   end
 
   describe '#kinds_case' do
-    it '種類の番号が "1" の場合はリーディングリストのブックマーク処理となるか' do
-      @record.number = 1
-      expect(@record.kinds_case).to eq 'リーディングリストのブックマーク処理'
+    context '種類の番号が１の場合' do
+      it 'リーディングリストのブックマーク処理となるか' do
+        @record.number = 1
+        expect(@record.kinds_case).to eq 'リーディングリストのブックマーク処理'
+      end      
     end
-    it '種類の番号が "2" の場合はプログラミング学習となるか' do
-      @record.number = 2
-      expect(@record.kinds_case).to eq 'プログラミング学習'
+    context '種類の番号が２の場合' do
+      it 'プログラミング学習となるか' do
+        @record.number = 2
+        expect(@record.kinds_case).to eq 'プログラミング学習'
+      end      
     end
-    it '種類の番号が "3" の場合は仕事となるか' do
-      @record.number = 3
-      expect(@record.kinds_case).to eq '仕事'
+    context '種類の番号が３の場合' do
+      it '仕事となるか' do
+        @record.number = 3
+        expect(@record.kinds_case).to eq '仕事'
+      end          
     end
   end
 
