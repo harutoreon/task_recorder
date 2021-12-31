@@ -1,6 +1,9 @@
 require 'logger'
 
 class Recorder
+  attr_accessor :number, :comment
+  attr_reader :start_time, :end_time, :date, :kinds
+
   def initialize
     @start_time
     @end_time
@@ -10,46 +13,20 @@ class Recorder
     @kinds
     @result_time
   end
-  def start_time
-    @start_time
-  end
-  def start_time=(value)
-    @start_time = value
-  end
-  def end_time
-    @end_time
-  end
-  def end_time=(value)
-    @end_time = value
-  end
+  
   def start_time_count
     @start_time = Time.new
   end
+  
   def end_time_count
     @end_time = Time.new
   end
-  def date
-    @date
-  end
+  
   def date_count
     time = Time.new
     @date = time.strftime("%Y/%m/%d")  
   end
-  def number
-    @number
-  end
-  def number=(value)
-    @number = value
-  end
-  def comment
-    @comment  
-  end
-  def comment=(value)
-    @comment = value
-  end
-  def kinds
-    @kinds
-  end
+  
   def kinds_case
     @kinds =
     case @number.to_i
@@ -61,6 +38,7 @@ class Recorder
       "仕事"
     end    
   end
+  
   def result_time
     @result_time = ((@end_time - @start_time)/60).round
   end  
