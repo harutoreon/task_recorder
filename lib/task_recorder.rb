@@ -30,12 +30,12 @@ class Recorder
     @kinds =
     case @number.to_i
     when 1
-      "リーディングリストのブックマーク処理"  
+      "リーディングリストのブックマーク処理"
     when 2
       "プログラミング学習"
     when 3
       "仕事"
-    end    
+    end
   end
   
   def result_time
@@ -65,7 +65,7 @@ TEXT
 
 record.number = gets
 
-puts '内容を入力して下さい' 
+puts '内容を入力して下さい'
 
 record.comment = gets
 
