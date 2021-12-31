@@ -45,17 +45,17 @@ RSpec.describe Recorder do
     context '種類の番号が１の場合' do
       it '１に変更できるか' do
         expect(@record.number = 1).to eq 1
-      end      
+      end
     end
     context '種類の番号が２の場合' do
       it '２に変更できるか' do
         expect(@record.number = 2).to eq 2
-      end      
+      end
     end
     context '種類の番号が３の場合' do
       it '３に変更できるか' do
         expect(@record.number = 3).to eq 3
-      end      
+      end
     end
   end
 
@@ -82,19 +82,19 @@ RSpec.describe Recorder do
       it 'リーディングリストのブックマーク処理となるか' do
         @record.number = 1
         expect(@record.kinds_case).to eq 'リーディングリストのブックマーク処理'
-      end      
+      end
     end
     context '種類の番号が２の場合' do
       it 'プログラミング学習となるか' do
         @record.number = 2
         expect(@record.kinds_case).to eq 'プログラミング学習'
-      end      
+      end
     end
     context '種類の番号が３の場合' do
       it '仕事となるか' do
         @record.number = 3
         expect(@record.kinds_case).to eq '仕事'
-      end          
+      end
     end
   end
 
