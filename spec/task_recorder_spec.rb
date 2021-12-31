@@ -23,15 +23,15 @@ RSpec.describe Recorder do
     end
   end
 
-  describe '#end_time_count' do
-    it '終了時間のカウントができるか' do
-      expect(@record.end_time_count).to eq @record.end_time
+  describe '#date_count' do
+    it '開始日のカウントができるか' do
+      expect(@record.date_count).to eq @record.date
     end
   end
 
-  describe '#date_count' do
-    it '実施日のカウントができるか' do
-      expect(@record.date_count).to eq @record.date
+  describe '#end_time_count' do
+    it '終了時間のカウントができるか' do
+      expect(@record.end_time_count).to eq @record.end_time
     end
   end
 
@@ -99,10 +99,10 @@ RSpec.describe Recorder do
   end
 
   describe '#result_time' do
-    it '時間は30であるか' do
+    it '時間は0であるか' do
       @record.start_time_count
       @record.end_time_count
-      expect(@record.result_time).to eq ((@record.end_time - @record.start_time)/60).round
+      expect(@record.result_time).to eq 0
     end
   end
 end

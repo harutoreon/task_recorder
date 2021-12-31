@@ -15,16 +15,15 @@ class Recorder
   end
   
   def start_time_count
-    @start_time = Time.new
-  end
-  
-  def end_time_count
-    @end_time = Time.new
+    @start_time = time_count
   end
   
   def date_count
-    time = Time.new
-    @date = time.strftime("%Y/%m/%d")  
+    @date = time_count.strftime("%Y/%m/%d")
+  end
+
+  def end_time_count
+    @end_time = time_count
   end
   
   def kinds_case
@@ -41,44 +40,44 @@ class Recorder
   
   def result_time
     @result_time = ((@end_time - @start_time)/60).round
-  end  
-end
+  end
+  
+  private
 
+  def time_count
+    Time.new
+  end
+end
 
 logger = Logger.new('./log/logfile.log')
 logger.datetime_format = ''
 
 record = Recorder.new
-record.date_count
 record.start_time_count
+record.date_count
 
-msg1 = <<TEXT
+puts msg1 = <<TEXT
 種類を選択して下さい
 1: リーディングリストのブックマーク処理
 2: プログラミング学習
 3: 仕事
 TEXT
 
-puts msg1
 record.number = gets
 
-msg2 = '内容を入力して下さい' 
-puts msg2
+puts '内容を入力して下さい' 
 
 record.comment = gets
 
 record.end_time_count
-
 record.kinds_case
 
-msg3 = <<TEXT
+puts msg3 = <<TEXT
 ------------------------------------
 日付: #{record.date}
 種類: #{record.kinds}
 内容: #{record.comment.chomp}
 時間: #{record.result_time}
 TEXT
-
-puts msg3
 
 logger.info("#{record.date}, #{record.kinds}, #{record.comment.chomp}, #{record.result_time}")
