@@ -72,16 +72,6 @@ RSpec.describe Recorder do
         expect(@record.number = 6).to eq 6
       end
     end
-    context '種類の番号が７の場合' do
-      it '７に変更できるか' do
-        expect(@record.number = 7).to eq 7
-      end
-    end
-    context '種類の番号が８の場合' do
-      it '８に変更できるか' do
-        expect(@record.number = 8).to eq 8
-      end
-    end
   end
 
   describe '#comment' do
@@ -104,51 +94,39 @@ RSpec.describe Recorder do
 
   describe '#kinds_case' do
     context '種類の番号が１の場合' do
-      it 'リーディングリストのブックマーク処理となるか' do
-        @record.number = 1
-        expect(@record.kinds_case).to eq 'リーディングリストのブックマーク処理'
-      end
-    end
-    context '種類の番号が２の場合' do
-      it 'プログラミング学習となるか' do
-        @record.number = 2
-        expect(@record.kinds_case).to eq 'プログラミング学習'
-      end
-    end
-    context '種類の番号が３の場合' do
-      it '仕事となるか' do
-        @record.number = 3
-        expect(@record.kinds_case).to eq '仕事'
-      end
-    end
-    context '種類の番号が４の場合' do
       it 'メモのデジタル化となるか' do
-        @record.number = 4
+        @record.number = 1
         expect(@record.kinds_case).to eq 'メモのデジタル化'
       end
     end
+    context '種類の番号が２の場合' do
+      it '仕事となるか' do
+        @record.number = 2
+        expect(@record.kinds_case).to eq '仕事'
+      end
+    end
+    context '種類の番号が３の場合' do
+      it 'プログラミング学習となるか' do
+        @record.number = 3
+        expect(@record.kinds_case).to eq 'プログラミング学習'
+      end
+    end
+    context '種類の番号が４の場合' do
+      it 'ポートフォリオ開発となるか' do
+        @record.number = 4
+        expect(@record.kinds_case).to eq 'ポートフォリオ開発'
+      end
+    end
     context '種類の番号が５の場合' do
-      it 'ツール開発となるか' do
+      it 'メモの整理となるか' do
         @record.number = 5
-        expect(@record.kinds_case).to eq 'ツール開発'
+        expect(@record.kinds_case).to eq 'メモの整理'
       end
     end
     context '種類の番号が６の場合' do
-      it 'メモの整理と振り分けとなるか' do
+      it 'リーディングリストの整理となるか' do
         @record.number = 6
-        expect(@record.kinds_case).to eq 'メモの整理と振り分け'
-      end
-    end
-    context '種類の番号が７の場合' do
-      it 'スケジュール確認・タスクリスト作成となるか' do
-        @record.number = 7
-        expect(@record.kinds_case).to eq 'スケジュール確認・タスクリスト作成'
-      end
-    end
-    context '種類の番号が８の場合' do
-      it 'ポートフォリオ開発となるか' do
-        @record.number = 8
-        expect(@record.kinds_case).to eq 'ポートフォリオ開発'
+        expect(@record.kinds_case).to eq 'リーディングリストの整理'
       end
     end
   end
